@@ -1,0 +1,20 @@
+{
+  "buttons": {
+    "Up": {"flags": 19, "parameters": [6, 0, 50], "x": 2000, "y": 2000},
+    "Left": {"flags": 19, "parameters": [5, 80, 0], "x": 1500, "y": 2200},
+    "Down": {"flags": 19, "parameters": [6, 0, 206], "x": 2000, "y": 2500},
+    "Right": {"flags": 19, "parameters": [5, 176, 255], "x": 2500, "y": 2200},
+    "A": {"flags": 0, "parameters": [0, 0, 0], "x": 3000, "y": 2000},
+    "B": {"flags": 2, "parameters": [2, 7, 25], "x": 3000, "y": 2500},
+    "X": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "Y": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "L": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "R": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "ZL": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "ZR": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "Plus": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "Minus": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "Capture": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000},
+    "Home": {"flags": 0, "parameters": [0, 0, 0], "x": 2000, "y": 2000}
+  }
+}

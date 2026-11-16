@@ -1,0 +1,14 @@
+/build/
+*.ufw
+*.exe
+*.dll
+*.bin
+*.i64
+*.idb
+*.log
+*.zip
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store

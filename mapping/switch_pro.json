@@ -1,0 +1,41 @@
+{
+  "buttons": {
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "X": "X",
+    "Y": "Y",
+    "Z": "Z",
+    "L": "L",
+    "R": "R",
+    "ZL": "ZL",
+    "ZR": "ZR",
+    "Minus": "Minus",
+    "Plus": "Plus",
+    "Home": "Home",
+    "L3": "L3",
+    "R3": "R3",
+    "Capture": "Capture",
+    "Up": "Up",
+    "Down": "Down",
+    "Left": "Left",
+    "Right": "Right",
+    "Menu": "Menu",
+    "Mode": "Mode",
+    "Fn": "Fn",
+    "M1": "M1",
+    "M2": "M2",
+    "M3": "M3",
+    "M4": "M4",
+    "M5": "M5",
+    "M6": "M6",
+    "M7": "M7",
+    "M8": "M8"
+  },
+  "gyro": {
+    "sensitivity": 32,
+    "deadzone": 8,
+    "invert_x": true,
+    "invert_y": false
+  }
+}

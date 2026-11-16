@@ -1,0 +1,182 @@
+{
+  "startup_signature": "c4 ff 00 00 00 00 c1 ff ?? ?? ?? ?? c2 ff ?? ?? ?? ?? a2 a2 12 03 13 05 c3 05 f2 5c",
+  "state_signature": "c1 ff ?? ?? 00 00 19 43 01 f8 06 02 01 f8 11 04 6d 16",
+  "hooks": [
+    {
+      "label": "left_entry",
+      "signature": "c1 ff 00 00 01 80 90 e1 02 21 81 e8 ?? ?? 40 f0 ?? ?? 49 66 51 e8 04 20 d8 ee 80 10 01 f8 ?? ?? 41 22 02 e1 ?? ?? a9 60 41 28 a9 61 41 30 a9 62 41 23",
+      "patch_offset": 0,
+      "size": 6,
+      "region": "ram"
+    },
+    {
+      "label": "mapping_entry",
+      "signature": "00 e1 2b 50 10 85 12 07 82 07 d6 16 48 30 d8 40 bf ea ?? ?? d8 42 59 83 50 e8 05 22",
+      "patch_offset": 12,
+      "size": 4,
+      "region": "flash"
+    },
+    {
+      "label": "rotation_entry",
+      "signature": "f8 e8 a8 00 bf ea ?? ?? 56 e8 43 20 04 f8 41 06 d9 e9 b8 00 bf ea ?? ?? d8 e9 ba 10",
+      "patch_offset": 12,
+      "size": 4,
+      "region": "flash"
+    },
+    {
+      "label": "conversion_entry",
+      "signature": "10 04 03 16 31 60 62 e1 a0 1a 40 30 20 ff a0 2a 13 00 62 e1 10 1a 48 20",
+      "patch_offset": 0,
+      "size": 4,
+      "region": "flash"
+    },
+    {
+      "label": "led_entry",
+      "signature": "11 17 43 21 c8 e1 30 11 52 ee 92 12 43 e0 ?? ?? d8 ec 9a 33 03 f8 07 08 43 e0 ?? ?? d8 ec 9a 33 03 f8 01 08",
+      "patch_offset": 12,
+      "size": 4,
+      "region": "flash"
+    }
+  ],
+  "templates": [
+    {
+      "name": "payload",
+      "source": "left_joycon.s",
+      "size": 232,
+      "labels": {
+        "already_left": 34,
+        "commit_left": 56,
+        "conversion_entry": 200,
+        "left_entry": 0,
+        "mapping_entry": 70,
+        "mapping_exit": 176,
+        "original": 60,
+        "original_conversion": 224,
+        "resume_conversion": 228,
+        "resume_mapping": 180,
+        "resume_original": 66,
+        "resume_rotation": 192,
+        "rotation_entry": 184,
+        "select_left": 38,
+        "skip_rotation": 196
+      },
+      "constants": [
+        {
+          "offset": 14,
+          "kind": "immediate16",
+          "register": 0,
+          "value": "role_config"
+        },
+        {
+          "offset": 38,
+          "kind": "add14",
+          "register": 2,
+          "base": 8,
+          "value": "mode_config"
+        },
+        {
+          "offset": 70,
+          "kind": "immediate16",
+          "register": 0,
+          "value": "active_state"
+        },
+        {
+          "offset": 200,
+          "kind": "immediate16",
+          "register": 2,
+          "value": "active_state"
+        },
+        {
+          "offset": 212,
+          "kind": "immediate16",
+          "register": 2,
+          "value": "active_state"
+        }
+      ]
+    },
+    {
+      "name": "led",
+      "source": "led.s",
+      "labels": {
+        "led_entry": 0,
+        "original_led": 18,
+        "resume_led": 22
+      },
+      "size": 26,
+      "originals": {
+        "original_led": "led_original"
+      }
+    }
+  ],
+  "gyro": {
+    "size": 364,
+    "labels": {
+      "combo_state": 104,
+      "gyro_apply": 190,
+      "gyro_center": 360,
+      "gyro_combo": 0,
+      "gyro_done": 312,
+      "gyro_limit": 356,
+      "gyro_minus": 52,
+      "gyro_multiply": 336,
+      "gyro_plus": 104,
+      "gyro_positive": 332,
+      "gyro_release": 34,
+      "gyro_report": 154,
+      "gyro_resume": 150,
+      "gyro_scale": 316,
+      "gyro_selected": 228,
+      "gyro_status": 264,
+      "gyro_toggle": 126,
+      "gyro_xinput": 172,
+      "indicator_offset": 76,
+      "minus_offset": 52,
+      "mode_offset": 84,
+      "physical_offset": 232,
+      "plus_offset": 126,
+      "release_offset": 34,
+      "report_global": 228,
+      "report_offset": 264,
+      "report_return": 168,
+      "report_state": 192,
+      "save_call": 98,
+      "settings_pointer": 276,
+      "xinput_return": 186
+    },
+    "combo_signature": "f0 16 d8 ec 8a 00 c1 ff 00 04 80 00 90 19 81 e8 31 00 41 e0 ?? ?? d8 ee 80 01 90 51 40 21 d8 ee 81 01 f9 34 d8 ee 81 01 41 e0 ?? ?? d8 ee 80 21 32 e8 01 00 40 20 d8 ee 81 01 ?? ?? ?? ?? 04 9f",
+    "release_signature": "40 e0 ?? ?? 41 20 d8 ee 81 10 f0 16 d8 ec 8a 00 d3 ec ?? ??",
+    "report_signature": "f8 e8 a8 10 40 21 8e ea ?? ??",
+    "keys_signature": "4f e0 ?? ?? 4c e0 ?? ?? 4e e0 ?? ??",
+    "xinput_signature": "40 20 f8 e8 a8 40 40 d6 a0 2c bf ea ?? ?? 40 28 41 16 8e ea ?? ?? ?? ??"
+  },
+  "names": {
+    "size": 132,
+    "labels": {
+      "base_pro_pointer": 18,
+      "default_pointer": 52,
+      "generic_pointer": 82,
+      "left_pointer": 124,
+      "name_base": 0,
+      "name_base_return": 66,
+      "name_default": 52,
+      "name_done": 130,
+      "name_generic": 82,
+      "name_generic_return": 96,
+      "name_left": 124,
+      "name_nintendo": 70,
+      "name_nintendo_return": 78,
+      "name_role": 100,
+      "name_xbox": 36,
+      "pro_pointer": 70,
+      "right_pointer": 116,
+      "role_pointer": 100,
+      "xbox_pointer": 36
+    },
+    "base_signature": "69 40 c0 ff ?? ?? ?? ?? 51 e8 0e 18 69 61 01 f8 10 08 01 f8 0e 10 81 f8 07 20",
+    "nintendo_signature": "?? ?? ?? ?? ?? ?? ?? ?? 89 80 10 8d 02 07 92 07 34 86",
+    "generic_signature": "8d 80 58 8d 41 20 00 93 81 07 00 e1 ?? ?? ?? ?? 10 8c 02 07 92 07 50 16",
+    "base_return_signature": "40 20 41 16 00 9c 90 07 8e 83 60 16",
+    "generic_return_signature": "8e 80 60 16 97 ea ?? ?? ?? ??"
+  },
+  "global_signature": "50 ed 1a e1 50 ed 18 f1 50 ed 16 c1 50 ed 14 91 50 ed 12 a1 25 d6 1c 68 54 ed 1a 60 54 ed 18 30 83 20 54 ed 16 70 54 ed 14 b0 c3 ff ?? ?? ?? ??"
+}
