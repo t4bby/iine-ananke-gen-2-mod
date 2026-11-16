@@ -30,24 +30,24 @@ r1 = 0x80010000
 resume_original:
 goto 1000000
 
-; Final Nintendo report mapper; default layout confirmed working on the owner's controller.
+; Left Nintendo report mapper with rotated directions and duplicated shoulders.
 ; See docs/patches.md for register contracts and limitations.
 .text
 mapping_entry:
 r0 = ${active_state}
 r0 = b[r0+3] (u)
 if (r0 != 1) goto mapping_exit
-r2 = r8 >> 18
+r2 = r8 >> 17
 r2 &= 1
-r3 = r8 >> 19
+r3 = r8 >> 16
 r3 &= 1
 r2 -= r3
 r3 = 32767
 r2 *= r3
 r11 = r2
-r2 = r8 >> 17
+r2 = r8 >> 19
 r2 &= 1
-r3 = r8 >> 16
+r3 = r8 >> 18
 r3 &= 1
 r2 -= r3
 r3 = 32767
@@ -56,16 +56,19 @@ r7 = r2
 r1 = 0xfff0fff0
 r1 &= r8
 r2 = r8 & 1
-r2 <<= 19
+r2 <<= 17
 r1 |= r2
 r2 = r8 & 2
-r2 <<= 16
+r2 <<= 17
 r1 |= r2
 r2 = r8 & 4
-r2 <<= 14
+r2 <<= 17
 r1 |= r2
 r2 = r8 & 8
-r2 <<= 15
+r2 <<= 13
+r1 |= r2
+r2 = r8 & 0xc0
+r2 <<= 16
 r1 |= r2
 r8 = r1
 mapping_exit:

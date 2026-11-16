@@ -4,7 +4,7 @@ Generate modified Mini Ananke Gen 2 firmware from an original V0900 or V0901 `.u
 
 | Added Feature | Patch details |
 | --- | --- |
-| Left Joy-Con | Pairing + L selects Left Joy-Con; Pairing + Down keeps Right Joy-Con. D-pad controls the left stick, X/B/Y/A act as Up/Down/Left/Right, and the first player LED lights up. L/ZL and Minus/Plus retain their assignments. |
+| Left Joy-Con | Pairing + L selects Left Joy-Con; Pairing + Down keeps Right Joy-Con. Left/Right/Down/Up control stick Up/Down/Left/Right. Y/A/B/X act as D-pad Up/Down/Left/Right. R/ZR duplicate L/ZL; |
 | Device names | Default name: Joy-Con modes use `Joy-Con (L)` and `Joy-Con (R)`; Pro mode keeps `Pro Controller`. |
 | Gamepad Mapping | Edit native gamepad, keyboard, mouse, multimedia and touch defaults through the JSON files in `mapping/`. Gamepad modes share one mapping bank. Power is excluded. |
 | Gyro right stick | Turbo + Plus toggles gyro-to-right-stick in XInput, HID and Switch Pro modes. Tune each mode in its mapping JSON. Turbo + Minus keeps its original function. See [gyro controls](docs/gyro.md). |

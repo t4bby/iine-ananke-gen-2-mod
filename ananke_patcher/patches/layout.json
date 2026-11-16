@@ -42,23 +42,23 @@
     {
       "name": "payload",
       "source": "left_joycon.s",
-      "size": 232,
+      "size": 240,
       "labels": {
         "already_left": 34,
         "commit_left": 56,
-        "conversion_entry": 200,
+        "conversion_entry": 208,
         "left_entry": 0,
         "mapping_entry": 70,
-        "mapping_exit": 176,
+        "mapping_exit": 184,
         "original": 60,
-        "original_conversion": 224,
-        "resume_conversion": 228,
-        "resume_mapping": 180,
+        "original_conversion": 232,
+        "resume_conversion": 236,
+        "resume_mapping": 188,
         "resume_original": 66,
-        "resume_rotation": 192,
-        "rotation_entry": 184,
+        "resume_rotation": 200,
+        "rotation_entry": 192,
         "select_left": 38,
-        "skip_rotation": 196
+        "skip_rotation": 204
       },
       "constants": [
         {
@@ -81,13 +81,13 @@
           "value": "active_state"
         },
         {
-          "offset": 200,
+          "offset": 208,
           "kind": "immediate16",
           "register": 2,
           "value": "active_state"
         },
         {
-          "offset": 212,
+          "offset": 220,
           "kind": "immediate16",
           "register": 2,
           "value": "active_state"
