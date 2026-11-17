@@ -33,8 +33,10 @@
     "M8": "M8"
   },
   "gyro": {
-    "sensitivity": 32,
-    "deadzone": 8,
+    "sensitivity": 4,
+    "deadzone": 16,
+    "axis_x": "x",
+    "axis_y": "y",
     "invert_x": true,
     "invert_y": false
   }

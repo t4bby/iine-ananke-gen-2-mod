@@ -54,7 +54,7 @@ The existing shortcut latch uses bits 0 (Minus latch), 1 (Plus latch) and 7 (gyr
 
 Minus performs the native toggle and calls the original save routine. Plus toggles the temporary gyro bit in XInput, HID and Switch Pro. Both the shortcut and report hooks bypass Left and Right Joy-Con, preserving their stick and Plus inputs even when the session gyro bit is set. The send hooks preserve scratch registers, suppress the hotkey's Plus input and modify only the right-stick fields. They restore the displaced argument setup before returning to the native send path.
 
-The report code selects a tuning record using the active mode and Nintendo role. Three six-byte records follow the injected code, each containing signed X/Y gains and an unsigned deadzone, compiled from the corresponding mapping JSON. Joy-Con, keyboard, mouse, touch and multimedia reports are excluded.
+The report code selects a tuning record using the active mode and Nintendo role. Three eight-byte records follow the injected code, each containing signed X/Y gains, an unsigned deadzone and two gyro source offsets, compiled from the corresponding mapping JSON. Joy-Con, keyboard, mouse, touch and multimedia reports are excluded.
 
 Calibrated gyro axes are read from the normalized input structure. Each axis removes its deadzone, applies its signed gain and clamps to the signed stick range. Native motion samples remain unchanged. Input sampling is independent of the host's motion-report flag.
 

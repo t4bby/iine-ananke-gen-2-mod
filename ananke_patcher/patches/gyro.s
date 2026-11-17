@@ -80,9 +80,9 @@ report_state:
 r2 = ${active_state}
 r3 = h[r2+12] (u)
 if ((r3 & 25) == 0) goto gyro_done
-r10 = 12
+r10 = 16
 if ((r3 & 1) != 0) goto gyro_selected
-r10 = 6
+r10 = 8
 if ((r3 & 8) != 0) goto gyro_selected
 r0 = b[r2+3] (u)
 if (r0 != 3) goto gyro_done
@@ -110,11 +110,15 @@ settings_pointer:
 r3 = ${settings}
 r3 += r10
 r11 = h[r3+4] (u)
-r0 = h[r1+26] (s)
+r2 = b[r3+6] (u)
+r2 = r1 + r2
+r0 = h[r2+0] (s)
 r10 = h[r3+0] (s)
 call gyro_scale
 h[r1+8] = r0
-r0 = h[r1+22] (s)
+r2 = b[r3+7] (u)
+r2 = r1 + r2
+r0 = h[r2+0] (s)
 r10 = h[r3+2] (s)
 call gyro_scale
 h[r1+10] = r0

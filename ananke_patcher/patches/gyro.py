@@ -9,6 +9,8 @@ from ..container import require
 from ..discovery import find, u16
 from .model import Context, Edit, Patch
 
+AXES = {"x": 22, "y": 24, "z": 26}
+
 
 def build(context: Context, address: int) -> Patch:
     area = context.area
@@ -48,10 +50,20 @@ def build(context: Context, address: int) -> Patch:
             type(settings["invert_x"]) is bool and type(settings["invert_y"]) is bool,
             f"{mode}: gyro inversion settings must be booleans",
         )
+        require(
+            all(
+                type(settings[key]) is str and settings[key] in AXES
+                for key in ("axis_x", "axis_y")
+            ),
+            f"{mode}: gyro axes must be x, y or z",
+        )
         gain_x = -gain if settings["invert_x"] else gain
         gain_y = -gain if settings["invert_y"] else gain
-        settings_data += struct.pack("<hhH", gain_x, gain_y, deadzone)
-        listing.append(f"gyro_{mode}_settings:\n.short {gain_x}, {gain_y}, {deadzone}\n")
+        axis_x, axis_y = AXES[settings["axis_x"]], AXES[settings["axis_y"]]
+        settings_data += struct.pack("<hhHBB", gain_x, gain_y, deadzone, axis_x, axis_y)
+        listing.append(
+            f"gyro_{mode}_settings:\n.short {gain_x}, {gain_y}, {deadzone}\n.byte {axis_x}, {axis_y}\n"
+        )
     values = {
         "latch": latch,
         "indicator": latch - 12,

@@ -44,7 +44,14 @@ BANKS = {
     "touch": "touch",
 }
 GYRO_MODES = ("switch_pro", "xinput", "hid")
-GYRO_DEFAULTS = {"sensitivity": 32, "deadzone": 8, "invert_x": True, "invert_y": False}
+GYRO_DEFAULTS = {
+    "sensitivity": 4,
+    "deadzone": 16,
+    "axis_x": "x",
+    "axis_y": "y",
+    "invert_x": True,
+    "invert_y": False,
+}
 TYPES = {"gamepad": 1, "keyboard": 2, "mouse": 3, "consumer": 4}
 ACTION_FIELDS = {
     "gamepad": {"buttons"},
