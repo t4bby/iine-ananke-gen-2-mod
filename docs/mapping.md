@@ -24,7 +24,7 @@ Use `--mapping /path/to/mapping` to select another complete mapping folder. Outp
 
 The firmware shares one gamepad mapping bank. Make the same assignment changes in all five gamepad files; conflicting button assignments are rejected. Gyro tuning is independent for Switch Pro, XInput and HID; it is disabled in both Joy-Con modes. Keyboard, mouse, touch and multimedia have separate banks.
 
-Mappings apply to normalized inputs before each mode builds its reports. The Left report patch then rotates the directional inputs and duplicates shoulders as shown below. Right retains its original rotation and shoulder behavior. These conversions are not additional app-visible mapping options.
+Mappings apply to normalized inputs before each mode builds its reports. The Left report patch then rotates the directional inputs and maps the rail buttons as shown below. Right retains its original rotation and shoulder behavior. These conversions are not additional app-visible mapping options.
 
 ## Left Joy-Con orientation
 
@@ -40,8 +40,10 @@ These conversions apply only in Left Joy-Con mode, after native button assignmen
 | A | D-pad Down |
 | B | D-pad Left |
 | X | D-pad Right |
-| L or R | L |
-| ZL or ZR | ZL |
+| L | L |
+| ZL | ZL |
+| R | SR |
+| ZR | SL |
 
 Opposite stick directions cancel; diagonals drive both axes. Minus and Plus keep their existing assignments.
 

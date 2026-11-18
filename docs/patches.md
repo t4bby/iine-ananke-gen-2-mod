@@ -7,7 +7,7 @@ The generator reads the UFW/JLFS directories and embedded scrambling key, then l
 | Hook | Purpose |
 | --- | --- |
 | `left_entry` | Pairing + L selects Nintendo role 1. |
-| `mapping_entry` | Left report: rotate D-pad to stick and Y/A/B/X to Up/Down/Left/Right; duplicate R/ZR to L/ZL. |
+| `mapping_entry` | Left report: rotate D-pad to stick and Y/A/B/X to Up/Down/Left/Right; map R/ZR to SR/SL while preserving L/ZL. |
 | `rotation_entry` | Bypass sideways rotation for Left. |
 | `conversion_entry` | Preserve direction bits until the Left report mapper. |
 | `led_entry` | Select player LED mask 1 for Left. |

@@ -30,7 +30,7 @@ r1 = 0x80010000
 resume_original:
 goto 1000000
 
-; Left Nintendo report mapper with rotated directions and duplicated shoulders.
+; Left Nintendo report mapper with rotated directions and separate rail buttons.
 ; See docs/patches.md for register contracts and limitations.
 .text
 mapping_entry:
@@ -53,7 +53,7 @@ r2 -= r3
 r3 = 32767
 r2 *= r3
 r7 = r2
-r1 = 0xfff0fff0
+r1 = 0xfff0ff30
 r1 &= r8
 r2 = r8 & 1
 r2 <<= 17
@@ -68,7 +68,7 @@ r2 = r8 & 8
 r2 <<= 13
 r1 |= r2
 r2 = r8 & 0xc0
-r2 <<= 16
+r2 <<= 14
 r1 |= r2
 r8 = r1
 mapping_exit:
